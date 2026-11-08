@@ -1,0 +1,168 @@
+/* Arcanis V10 — estilos de la misión educativa */
+
+/* ---------- Tarjetas de aprendizaje ---------- */
+#v10Learn{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:14px;background:radial-gradient(circle at 50% 30%,#0b3b4ccc,#010a10f2);backdrop-filter:blur(8px);animation:v10fade .25s ease}
+#v10Learn article{width:min(660px,100%);max-height:calc(100dvh - 28px);overflow:auto;display:flex;flex-direction:column;gap:12px;padding:18px clamp(16px,4vw,30px) 20px;border:1px solid #6aeefc55;border-radius:24px;background:linear-gradient(150deg,#073546f2,#03141df7);box-shadow:0 30px 90px #000d,0 0 40px #42dfef22}
+#v10Learn header{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+#v10Learn header span{flex:1;color:#ffd35f;font-size:.74rem;font-weight:900;letter-spacing:.06em}
+#v10Learn header b{color:#8feefa;font-size:.7rem;letter-spacing:.14em}
+#v10Learn .lc-close,#v10Learn .lc-skip{border:1px solid #8ff6ff55;border-radius:10px;background:#04202b;color:#dffaff;font-weight:900;padding:6px 10px;font-size:.72rem}
+#v10Learn .lc-close{width:34px;height:34px;padding:0;font-size:1.2rem}
+#v10Learn .lc-card{min-height:250px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px;padding:8px 4px;animation:v10card .3s ease}
+#v10Learn .lc-ic{font-size:clamp(3rem,10vw,4.4rem);line-height:1;filter:drop-shadow(0 8px 18px #42dfef55)}
+#v10Learn h2{margin:0;font-size:clamp(1.35rem,4.5vw,1.9rem);color:#fff}
+#v10Learn .lc-card p{margin:0;max-width:540px;color:#d9f6fb;font-size:clamp(1rem,2.6vw,1.12rem);line-height:1.55}
+#v10Learn .lc-src{color:#8fb6c1;font-size:.72rem;font-style:italic}
+#v10Learn .lc-note{color:#ffd35f;font-size:.9rem;font-weight:700}
+#v10Learn .howto{display:grid;gap:9px;width:100%;max-width:520px}
+#v10Learn .howto div{display:grid;grid-template-columns:44px 1fr;grid-template-areas:"i t" "i s";align-items:center;column-gap:10px;padding:9px 12px;border:1px solid #55dcec44;border-radius:14px;background:#0a3544;text-align:left}
+#v10Learn .howto span{grid-area:i;font-size:1.7rem;text-align:center}
+#v10Learn .howto b{grid-area:t;color:#fff;font-size:.95rem}
+#v10Learn .howto em{grid-area:s;color:#9fd3dd;font-size:.8rem;font-style:normal}
+#v10Learn .lc-dots{display:flex;justify-content:center;gap:7px}
+#v10Learn .lc-dots i{width:9px;height:9px;border-radius:50%;background:#2a5f6d;transition:.2s}
+#v10Learn .lc-dots i.on{width:26px;border-radius:6px;background:#ffd35f}
+#v10Learn footer{display:flex;justify-content:space-between;gap:10px}
+#v10Learn footer button{min-height:48px;padding:0 18px;border-radius:14px;font-weight:1000}
+#v10Learn .lc-prev{border:1px solid #8ff6ff55;background:#04202b;color:#dffaff}
+#v10Learn .lc-prev:disabled{opacity:.35}
+@keyframes v10fade{from{opacity:0}to{opacity:1}}
+@keyframes v10card{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+
+/* ---------- Retroalimentación educativa ---------- */
+#v10Feedback{position:absolute;z-index:26;left:50%;bottom:104px;transform:translate(-50%,12px);width:max-content;max-width:min(700px,calc(100% - 24px));padding:10px 16px;border:1px solid #8ff6ff55;border-left-width:5px;border-radius:14px;background:#021722f2;color:#eaffff;font-size:clamp(.82rem,2.2vw,.98rem);line-height:1.4;text-align:left;box-shadow:0 14px 40px #000a;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s}
+#v10Feedback.show{opacity:1;transform:translate(-50%,0)}
+#v10Feedback.good{border-color:#69f1b8}
+#v10Feedback.bad{border-color:#ff5f68}
+#v10Feedback.info{border-color:#ffd35f}
+
+/* ---------- Nivel 1: canecas ---------- */
+body.v10-l1 #powerBtn{visibility:hidden}
+#v10Bins{position:absolute;z-index:24;left:50%;bottom:16px;transform:translateX(-50%);display:flex;gap:8px;padding:7px;border:1px solid #8ff6ff33;border-radius:18px;background:#021722d9;box-shadow:0 12px 34px #000a;backdrop-filter:blur(8px)}
+#v10Bins button{position:relative;min-width:96px;display:grid;justify-items:center;gap:3px;padding:7px 8px 6px;border:2px solid transparent;border-radius:13px;background:#0a3040;color:#eaffff;font-weight:900;transition:transform .15s,border-color .15s;touch-action:none}
+#v10Bins button i{width:30px;height:30px;border-radius:7px 7px 10px 10px;background:linear-gradient(90deg,var(--bind),var(--bin),var(--bind));border:2px solid #ffffffaa;box-shadow:0 3px 8px #0008}
+#v10Bins button b{font-size:.74rem;letter-spacing:.03em}
+#v10Bins button kbd{position:absolute;top:3px;right:6px;font:900 .6rem/1 Inter,system-ui,sans-serif;color:#8fb6c1}
+#v10Bins button.active{border-color:#ffd35f;background:#174c5d;transform:translateY(-4px);box-shadow:0 8px 20px #0009}
+#v10Bins button.hint-strong{animation:v10hintStrong .8s ease-in-out infinite}
+#v10Bins button.hint-soft{animation:v10hintSoft 1.4s ease-in-out infinite}
+@keyframes v10hintStrong{0%,100%{box-shadow:0 0 0 3px var(--bin),0 0 28px 6px var(--bin)}50%{box-shadow:0 0 0 5px var(--bin),0 0 44px 12px var(--bin)}}
+@keyframes v10hintSoft{0%,100%{box-shadow:0 0 0 1px var(--bin),0 0 8px 1px var(--bin)}50%{box-shadow:0 0 0 2px var(--bin),0 0 16px 3px var(--bin)}}
+
+/* ---------- Nivel 2: comensal ---------- */
+body.v10-l2 .mobile{display:none!important}
+#v10Diner{position:absolute;z-index:24;left:50%;bottom:14px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;padding:9px 14px;border:2px solid #69f1b8aa;border-radius:18px;background:#021722eb;box-shadow:0 12px 34px #000a;backdrop-filter:blur(8px)}
+#v10Diner.vul{border-color:#ff9fc0}
+#v10Diner.flash{animation:v10diner .7s ease}
+#v10Diner .ic{font-size:2.2rem;line-height:1}
+#v10Diner small{display:block;color:#8feefa;font-size:.62rem;font-weight:900;letter-spacing:.14em}
+#v10Diner b{display:block;color:#fff;font-size:1rem}
+#v10Diner em{display:block;color:#ffc2d6;font-size:.74rem;font-style:normal;font-weight:700}
+#v10Diner:not(.vul) em{color:#a7f5d2}
+#v10Diner .pot{display:grid;justify-items:center;padding-left:12px;border-left:1px solid #ffffff22;font-size:1.5rem;line-height:1}
+#v10Diner .pot b{font-size:.9rem;color:#ffd35f}
+@keyframes v10diner{0%{transform:translateX(-50%) scale(1)}40%{transform:translateX(-50%) scale(1.12)}100%{transform:translateX(-50%) scale(1)}}
+
+/* ---------- Nivel 3: letreros de decisión ---------- */
+#v10Gate{position:absolute;z-index:22;padding:9px 13px 11px;border:1px solid #ffd35f88;border-radius:0 0 16px 16px;background:#031924f4;box-shadow:0 14px 35px #0009;backdrop-filter:blur(10px);animation:v10fade .25s ease}
+#v10Gate small{display:block;color:#ffd35f;font-size:.64rem;font-weight:900;letter-spacing:.1em}
+#v10Gate h3{margin:4px 0 8px;color:#fff;font-size:clamp(.92rem,2.3vw,1.15rem);line-height:1.3}
+#v10Gate .opts{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}
+#v10Gate .opt{display:flex;align-items:center;gap:7px;padding:7px 9px;border:2px solid #55dcec44;border-radius:12px;background:#0a3040;color:#dffaff;font-size:clamp(.7rem,1.8vw,.86rem);line-height:1.25;transition:border-color .15s,background .15s}
+#v10Gate .opt kbd{flex:none;display:grid;place-items:center;width:26px;height:26px;border-radius:8px;background:#04202b;color:#8ff6ff;font:900 .9rem/1 Inter,system-ui,sans-serif}
+#v10Gate .opt.current{border-color:#8cf8ff;background:#125f73}
+#v10Gate .opt.hint-strong{border-color:#ffd35f;box-shadow:0 0 18px #ffd35f99;animation:v10gate .8s ease-in-out infinite}
+#v10Gate .opt.hint-soft{border-color:#ffd35f88}
+#v10Gate.ok{border-color:#69f1b8}
+#v10Gate.ok small{color:#69f1b8}
+#v10Gate.no{border-color:#ff5f68}
+#v10Gate.no small{color:#ff8b8f}
+#v10Gate .unlock{display:inline-block;padding:6px 11px;border-radius:10px;background:#0f4a3a;color:#c9ffe6;font-size:.85rem;font-weight:800}
+#v10Gate .unlock.lost{background:#3a1d22;color:#ffc9cc}
+@keyframes v10gate{0%,100%{box-shadow:0 0 10px #ffd35f66}50%{box-shadow:0 0 26px #ffd35fcc}}
+
+/* ---------- Pacto del Guardián ---------- */
+#finalMission .quizCard.pact-mode>*:not(#v10Pact){display:none!important}
+#v10Pact h2{margin:6px 0}
+#v10Pact>small{color:#ffd35f;font-weight:900;letter-spacing:.14em;font-size:.72rem}
+#v10Pact>p{color:#cfeff5}
+#v10Pact .pactGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin:14px 0}
+#v10Pact .pactCard{display:flex;align-items:center;gap:10px;padding:11px 12px;border:2px solid #55dcec44;border-radius:14px;background:#0a3544;color:#eaffff;text-align:left;transition:.15s}
+#v10Pact .pactCard span{font-size:1.6rem}
+#v10Pact .pactCard b{font-size:.86rem;font-weight:700;line-height:1.3}
+#v10Pact .pactCard.on{border-color:#ffd35f;background:#1c4f3f;box-shadow:0 0 18px #ffd35f44}
+#v10Pact .pactFoot{display:flex;align-items:center;justify-content:space-between;gap:12px}
+#v10Pact .pactFoot span{color:#ffd35f;font-weight:1000;font-size:1.1rem}
+#v10Pact .pactFoot button:disabled{opacity:.4;filter:grayscale(.6)}
+
+/* ---------- Escena final ---------- */
+#v10Built{margin:10px auto 14px;padding:12px;border:1px solid #6aeefc44;border-radius:16px;background:#04202bcc;max-width:620px}
+#v10Built>small{display:block;color:#ffd35f;font-weight:900;letter-spacing:.14em;font-size:.72rem;margin-bottom:8px}
+#v10Built .jobs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+#v10Built .job{display:grid;justify-items:center;gap:4px;padding:9px 6px;border:1px solid #ffffff22;border-radius:12px;background:#021722;opacity:.5}
+#v10Built .job.on{opacity:1;border-color:#69f1b8;background:#0f3b31}
+#v10Built .job span{font-size:1.7rem}
+#v10Built .job b{font-size:.72rem;color:#eaffff}
+#v10Built .plants{margin:9px 0 0;color:#b9ffcf;font-size:.82rem}
+#v10CertPact{margin:6px auto 10px;max-width:520px;text-align:left}
+#v10CertPact small{display:block;text-align:center;color:#0a5264;font-weight:900;letter-spacing:.12em;font-size:.7rem}
+#v10CertPact ul{margin:6px 0 0;padding-left:0;list-style:none;color:#294750;font-size:.84rem;line-height:1.5}
+
+@media(max-width:700px){
+  #v10Bins{bottom:10px;gap:4px;padding:5px;max-width:calc(100% - 132px)}
+  #v10Bins button{min-width:0;width:52px;padding:5px 2px 4px}
+  #v10Bins button i{width:24px;height:24px}
+  #v10Bins button b{font-size:.56rem}
+  #v10Bins button kbd{display:none}
+  #v10Feedback{bottom:96px}
+  body.v10-l2 #v10Feedback{bottom:92px}
+  #v10Diner{gap:9px;padding:7px 11px;width:max-content;max-width:calc(100% - 16px)}
+  #v10Diner .ic{font-size:1.8rem}
+  #v10Gate{padding:7px 9px 9px}
+  #v10Gate .opts{gap:5px}
+  #v10Gate .opt{flex-direction:column;align-items:flex-start;gap:4px;padding:6px}
+  #v10Gate .opt kbd{width:22px;height:22px}
+  #v10Pact .pactGrid{grid-template-columns:1fr}
+  #v10Built .jobs{grid-template-columns:repeat(2,1fr)}
+}
+#toast:not(.show){opacity:0;pointer-events:none}
+
+/* ---------- Nivel 2: Visión de Kael ---------- */
+#v10Vision{position:absolute;z-index:24;right:16px;bottom:16px;display:flex;align-items:center;gap:8px;padding:9px 13px;border:2px solid #8ff6ff88;border-radius:16px;background:#021722eb;color:#eaffff;font-weight:900;font-size:1.3rem;box-shadow:0 10px 28px #000a;touch-action:none}
+#v10Vision span{font-size:.78rem;letter-spacing:.04em}
+#v10Vision b{min-width:30px;padding:3px 7px;border-radius:9px;background:#0f4a5a;color:#ffd35f;font-size:.85rem}
+#v10Vision.on{border-color:#ffd35f;background:#13414f;box-shadow:0 0 24px #42dfef88}
+#v10Vision.empty{opacity:.4;filter:grayscale(.8)}
+#v10Learn .lc-card p{text-align:center}
+#v10Learn .lc-card p br+b,#v10Learn .lc-card p b{color:#fff}
+
+/* ---------- Informe de Kael ---------- */
+#v10Report{position:fixed;inset:0;z-index:150;display:grid;place-items:center;padding:14px;background:radial-gradient(circle at 50% 30%,#0b3b4ccc,#010a10f2);backdrop-filter:blur(8px);animation:v10fade .25s ease}
+#v10Report article{width:min(740px,100%);max-height:calc(100dvh - 28px);overflow:auto;display:flex;flex-direction:column;gap:10px;padding:18px clamp(14px,4vw,28px) 20px;border:1px solid #6aeefc55;border-radius:24px;background:linear-gradient(150deg,#073546f2,#03141df7);box-shadow:0 30px 90px #000d}
+#v10Report header span{color:#ffd35f;font-size:.8rem;font-weight:900;letter-spacing:.06em}
+#v10Report .rp{padding:11px 14px;border:1px solid #55dcec44;border-radius:15px;background:#0a3544}
+#v10Report .rp.key{border-color:#ffd35f88;background:#2a2f14}
+#v10Report h4{margin:0 0 6px;color:#8feefa;font-size:.72rem;letter-spacing:.14em}
+#v10Report p,#v10Report li{margin:0;color:#e3f7fb;font-size:clamp(.88rem,2.3vw,.98rem);line-height:1.45}
+#v10Report ul{margin:0;padding-left:18px;display:grid;gap:5px}
+#v10Report small{color:#8fb6c1;font-style:italic;font-size:.72rem}
+#v10Report b{color:#fff}
+#v10Report footer{display:flex;justify-content:flex-end}
+#v10Report footer button{min-height:48px;padding:0 22px;border-radius:14px;font-weight:1000}
+@media(max-width:700px){
+  #v10Vision{right:8px;bottom:156px;padding:7px 10px;font-size:1.1rem;z-index:27}
+  #v10Vision span{display:none}
+}
+
+/* Evita que los estilos globales de header/footer del juego afecten las ventanas v10 */
+#v10Learn header,#v10Report header,#v10Learn footer,#v10Report footer{position:static;inset:auto;transform:none;width:auto;max-width:none;margin:0;padding:0;border:0;border-radius:0;background:none;box-shadow:none;backdrop-filter:none;z-index:auto}
+#v10Learn article>*,#v10Report article>*{flex-shrink:0}
+
+/* Letrero: barra de tiempo de lectura y botón LISTO */
+#v10Gate .gfoot{display:flex;align-items:center;gap:10px;margin-top:8px}
+#v10Gate .gbar{flex:1;height:7px;border-radius:5px;background:#0a3040;overflow:hidden}
+#v10Gate .gbar b{display:block;height:100%;width:100%;background:linear-gradient(90deg,#69f1b8,#ffd35f);transition:width .2s linear}
+#v10Gate .gfoot em{color:#9fd3dd;font-size:.72rem;font-style:normal;white-space:nowrap}
+#v10Gate .g-ready{min-height:38px;padding:0 16px;border-radius:11px;font-weight:1000;font-size:.85rem}
+#v10Gate .g-ready:disabled{opacity:.6}
+@media(max-width:700px){#v10Gate .gfoot em{display:none}#v10Gate .g-ready{min-height:34px;padding:0 12px}}

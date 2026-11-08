@@ -1,0 +1,67 @@
+ARCANIS · CRYSTAL OF RIVERS — VERSIÓN 10 (rediseño educativo)
+================================================================
+
+ARCHIVOS NUEVOS O MODIFICADOS
+- mission-v10.js   (nuevo)  Toda la lógica educativa de los 3 niveles, las tarjetas, la práctica guiada,
+                            el Pacto del Guardián y el certificado.
+- mission-v10.css  (nuevo)  Estilos de lo anterior.
+- index.html       (modificado)  Carga los dos archivos nuevos al final y usa miniaturas .webp livianas
+                            en el mapa en lugar de los .png de 1,5 MB.
+Ningún archivo original fue borrado. En GitHub basta con subir estos tres archivos;
+no reemplaces la carpeta assets (ahí están las imágenes del comparador "Realidad y posibilidad").
+
+ESTRUCTURA DE CADA NIVEL
+Tarjetas para aprender (Kael) → práctica guiada (la ayuda se retira poco a poco) → juego.
+Si el jugador repite dos veces el mismo error, la ayuda vuelve una sola vez.
+La segunda vez que entra a un nivel puede saltar las tarjetas.
+
+NIVEL 1 · La ribera limpia
+Código de colores de la Resolución 2184 de 2019: blanca (aprovechables), verde (orgánicos
+aprovechables), negra (no aprovechables) y punto posconsumo (pilas y celulares).
+Controles: ← → o arrastrar; canecas con 1 2 3 4 o los botones de color.
+Lo que cae al suelo llega al río: el agua se oscurece y los peces se van.
+
+NIVEL 2 · La olla familiar (actualizado)
+10 especies del Cauca y La Mojana en 3 grupos de riesgo:
+  Menor riesgo (comen lodo y algas): bocachico, vizcaína.
+  Riesgo medio (omnívoros): comelón, arenca.
+  Mayor riesgo (comen otros peces): bagre rayado, blanquillo, moncholo, pacora, doncella, mojarra amarilla.
+Ya no hay auras visibles: el jugador decide por la especie y por el lugar. La "zona de la draga" invalida
+cualquier pez. La Visión de Kael (botón o ESPACIO) muestra el mercurio acumulado solo 2 veces por nivel.
+Niños, embarazadas y madres lactantes: solo peces verdes. Adultos: verdes, o amarillos de vez en cuando;
+los rojos no cuentan. En dificultad Leyenda no aparecen los nombres de los peces.
+Escasez de peces verdes: aparecen poco (la vizcaína más que el bocachico) y siempre hay al menos uno
+cuando se cocina para una persona sensible. En muchas rondas de adultos los peces verdes se van y el
+jugador debe reconocer los amarillos (comelón y arenca). Solo un depredador caza a la vez.
+Al terminar aparece el Informe de Kael: resultado del jugador, lo que dice la investigación,
+qué le hace el mercurio al cuerpo y una recomendación práctica.
+
+NIVEL 3 · La ruta del oro verde
+Plantas que pueden reemplazar el mercurio (balso, malva, escoba babosa, yarumo, cáscara de cacao)
+y 6 letreros de decisión: el jugador elige entrando a un carril. Las decisiones correctas
+desbloquean oficios en "La Caucasia que construiste" (oro verde, apicultura, piscicultura,
+cacao y caucho).
+
+CIERRE
+El Pacto del Guardián reemplaza la prueba de selección múltiple: el jugador elige 3 compromisos
+que quedan impresos en el certificado (en pantalla y en el PNG descargable).
+
+IDIOMA Y REALISMO
+Todo el inglés del juego (también los archivos originales) está en inglés americano.
+Nekross queda como villano de Arcanis; en el juego la contaminación del Cauca se atribuye a sus causas
+reales: basura, aguas residuales sin tratar y mercurio de la minería de oro.
+
+FUENTES DEL CONTENIDO
+- Ministerio de Ambiente, Resolución 2184 de 2019 y Abecé del código de colores.
+- Cordy et al. (2011), Science of the Total Environment: contaminación por mercurio de la minería de oro en Antioquia.
+- Romero-Suárez et al. (2022), Rev. MVZ Córdoba: mercurio en las 11 especies más consumidas en San Marcos (La Mojana).
+- Revista U.D.C.A: metilmercurio en los peces más consumidos de La Mojana (umbral para población vulnerable).
+- Rev. MVZ Córdoba (2015): mercurio en peces del embalse de Urrá (omnívoros con nivel intermedio).
+- OMS, nota descriptiva 361, y OPS: efectos del mercurio en la salud.
+- Acta Biológica Colombiana 27(1): MeHg en bocachico y moncholo de La Mojana y el Bajo Cauca.
+- INVIMA, documento técnico de mercurio en peces dulceacuícolas (biomagnificación, OMS).
+- Ministerio de Salud, Recomendaciones para la prevención de la exposición al mercurio.
+- Brooks et al. (2015), oro verde en Tadó, Chocó (balso y malva).
+- García-Cossio et al. (2017), Rev. Fac. Nal. Agronomía: plantas mucilaginosas en minería artesanal.
+- Montoya Rendón et al. (2024), Mine Water and the Environment: coagulante de cáscara de cacao.
+- Avancemos Bajo Cauca (Agronegocios) y DNP, diálogos regionales del Bajo Cauca.

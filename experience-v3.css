@@ -1,0 +1,64 @@
+/* Arcanis V3: cinematic opening and environmental impact chapters */
+html,body{font-family:"Segoe UI",Arial,sans-serif}
+h1,h2,h3,.cinematicButton,.victoryTitle,.portal b{font-family:Impact,"Arial Black","Segoe UI Black",sans-serif;letter-spacing:.035em}
+body[data-screen="splash"]>header{opacity:0;pointer-events:none;transform:translate(-50%,-30px)}
+body>header{transition:opacity .35s,transform .35s}
+
+#splash{padding:0;overflow:hidden;background:#010a10}
+.splashScene{position:relative;min-height:100svh;display:grid;place-items:center;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#00101a22 0%,#00111d91 64%,#00070dee 100%),url('assets/arcanis-river-hero-v2.webp') center/cover no-repeat}
+.splashScene:before{content:"";position:absolute;z-index:-1;inset:-10%;background:radial-gradient(circle at 50% 43%,#5ef5ff2e 0 10%,transparent 34%),linear-gradient(112deg,transparent 26%,#8bf8ff13 44%,transparent 61%);animation:splashAura 7s ease-in-out infinite alternate}
+.splashScene:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 25%,#000a 92%),linear-gradient(180deg,#0005,transparent 22%,transparent 70%,#000b)}
+.riverMist{position:absolute;z-index:-1;left:-10%;right:-10%;bottom:3%;height:35%;opacity:.46;filter:blur(22px);background:repeating-radial-gradient(ellipse at 50% 100%,#85f8ff30 0 2px,transparent 3px 25px);animation:mistFlow 8s linear infinite}
+.magicTrails{position:absolute;z-index:1;inset:0;pointer-events:none;overflow:hidden}
+.magicTrails i{position:absolute;width:34vw;height:2px;top:38%;left:-35%;border-radius:50%;background:linear-gradient(90deg,transparent,#6df5ff,#fff,transparent);box-shadow:0 0 13px #5ff6ff;transform:rotate(-9deg);animation:trailFly 5.4s linear infinite}
+.magicTrails i:nth-child(2){top:62%;animation-delay:-2.1s;animation-duration:7s;transform:rotate(8deg)}
+.magicTrails i:nth-child(3){top:22%;animation-delay:-4.3s;animation-duration:6.3s;transform:rotate(-4deg)}
+.splashContent{position:relative;z-index:3;width:min(820px,calc(100% - 28px));padding:clamp(22px,5vw,50px);text-align:center;color:#fff}
+.splashContent small{display:block;color:#9cf8ff;font-size:clamp(.7rem,2vw,.95rem);letter-spacing:.34em;text-shadow:0 0 15px #21d7ff}
+.splashContent h1{margin:4px auto 14px;max-width:750px;font-size:clamp(3.2rem,10vw,7.4rem);line-height:.84;text-transform:uppercase;background:linear-gradient(180deg,#fff 0%,#d9fbff 45%,#68dfea 70%,#238ca8 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 8px 0 #062e42) drop-shadow(0 18px 24px #000c)}
+.splashContent p{max-width:620px;margin:0 auto 22px;color:#d4edf1;font-size:clamp(.98rem,2.2vw,1.2rem);line-height:1.6;text-shadow:0 3px 15px #000}
+.splashCrystal{position:relative;width:clamp(105px,15vw,155px);height:clamp(105px,15vw,155px);margin:0 auto 4px;display:grid;place-items:center}
+.splashCrystal span{position:relative;z-index:2;font-size:clamp(5rem,11vw,8rem);filter:drop-shadow(0 0 14px #5bf2ff) drop-shadow(0 0 34px #198ee8);animation:crystalAwake 2.6s ease-in-out infinite}
+.splashCrystal i{position:absolute;inset:13%;border:2px solid #99fbff99;border-radius:50%;box-shadow:0 0 30px #4aefff,inset 0 0 22px #42dfff;animation:orbPulse 2s ease-out infinite}
+.cinematicButton{position:relative;min-height:58px;padding:0 17px 0 25px;display:inline-flex;align-items:center;gap:22px;border:1px solid #ffe5a2;border-radius:4px;overflow:hidden;background:linear-gradient(135deg,#ffd964,#f59a37);color:#071823;font-size:clamp(.88rem,2vw,1.05rem);font-weight:1000;letter-spacing:.12em;text-transform:uppercase;box-shadow:0 13px 35px #f39a334d,0 0 0 4px #fff1 inset;transition:transform .25s,box-shadow .25s}
+.cinematicButton:before{content:"";position:absolute;inset:-80%;background:linear-gradient(100deg,transparent 42%,#fff9 50%,transparent 58%);animation:buttonGlint 3.1s infinite}
+.cinematicButton>*{position:relative;z-index:1}.cinematicButton b{width:35px;height:35px;display:grid;place-items:center;border-radius:50%;background:#071823;color:#ffdc6f;font-size:.8rem}
+.cinematicButton:hover,.cinematicButton:focus-visible{transform:translateY(-4px) scale(1.025);box-shadow:0 18px 45px #f39a3366,0 0 0 4px #fff1 inset;outline:2px solid #fff}
+.splashHint{margin-top:15px;color:#a8c8d0;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase}
+
+#impact{position:relative;min-height:100svh;padding:76px 12px 28px;overflow:hidden;background:#010c13}
+.impactBackdrop{position:fixed;z-index:0;inset:0;background:linear-gradient(120deg,#001019ee,#072f40c9),url('assets/nivel-1-ribera.webp') center/cover no-repeat;filter:saturate(.8)}
+.impactBackdrop:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 22%,#47edff20,transparent 27%),linear-gradient(180deg,transparent,#00101999)}
+.impactPanel{position:relative;z-index:2;width:min(1120px,100%);margin:auto;padding:clamp(17px,3.5vw,34px);border:1px solid #83f5ff4d;border-radius:26px;background:linear-gradient(145deg,#031c28f2,#06151df4);box-shadow:0 30px 90px #000d,0 0 55px #27dce315;backdrop-filter:blur(14px)}
+.impactHeader{display:flex;align-items:center;justify-content:space-between;gap:18px}
+.impactHeader small{color:#63ecfa;letter-spacing:.2em}.impactHeader h2{margin:3px 0;font-size:clamp(2.1rem,5vw,4.2rem);line-height:.95;text-transform:uppercase}.impactHeader p{max-width:700px;margin:8px 0;color:#bad9df;line-height:1.5}
+.impactGem{width:78px;height:78px;display:grid;place-items:center;border:1px solid #8ffaff66;border-radius:50%;font-size:3.5rem;background:#0a3b4a88;box-shadow:0 0 30px #3de8ff44;animation:crystalAwake 2.6s infinite}
+.photoComparison{display:grid;grid-template-columns:minmax(0,1fr) 84px minmax(0,1fr);align-items:center;gap:12px;margin:24px 0 18px}
+.photoComparison figure{min-width:0;margin:0}.photoFrame{position:relative;height:clamp(245px,34vw,395px);border-radius:18px;overflow:hidden;background:#06141a;box-shadow:0 16px 38px #0009}
+.photoFrame img{width:100%;height:100%;display:block;object-fit:cover;transition:transform 7s ease}.photoFrame:hover img{transform:scale(1.08)}
+.photoFrame:after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 0 1px #ffffff1f,inset 0 -80px 80px #0008}
+.photoFrame span{position:absolute;z-index:2;left:14px;bottom:13px;padding:7px 11px;border-radius:6px;color:#fff;font-weight:1000;letter-spacing:.15em;text-transform:uppercase;background:#bc283ae8;box-shadow:0 5px 18px #0008}
+.photoFrame.possibility span{background:#168b66e8}.photoFrame.possibility{box-shadow:0 16px 38px #0009,0 0 28px #37e6bc27}
+.photoComparison figcaption{min-height:38px;padding:8px 5px 0;color:#b9d5dc;font-size:.8rem;line-height:1.4}
+.changeArrow{text-align:center;color:#7cf5ff}.changeArrow span{display:block;font-size:2.8rem;filter:drop-shadow(0 0 8px #32e7ff);animation:arrowPush 1.7s ease-in-out infinite}.changeArrow b{display:block;margin-top:5px;color:#b7d9df;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase}
+.knowledgeGrid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.knowledgeGrid>section{display:flex;align-items:flex-start;gap:13px;padding:15px;border:1px solid #ffffff16;border-radius:16px;background:#ffffff08}
+.knowledgeGrid>section>span{flex:0 0 auto;width:40px;height:40px;display:grid;place-items:center;border:1px solid #ffd76d;border-radius:50%;background:#7e5b0c55;color:#ffe17f;font-size:1.35rem;font-weight:1000}
+.knowledgeGrid .missionAction>span{border-color:#66edbd;background:#0d745455;color:#7cffcd}.knowledgeGrid small{color:#ffda70;letter-spacing:.16em}.knowledgeGrid .missionAction small{color:#74f0c2}.knowledgeGrid p{margin:5px 0 0;color:#e1f1f4;line-height:1.48;font-size:.92rem}
+.impactFooter{display:flex;align-items:center;gap:18px;margin-top:18px}.impactProgress{flex:1;height:7px;overflow:hidden;border-radius:9px;background:#001017}.impactProgress i{display:block;width:33%;height:100%;border-radius:9px;background:linear-gradient(90deg,#39e6f3,#70f1b9,#ffd665);box-shadow:0 0 17px #54e9e4;transition:width .7s ease}
+
+@keyframes splashAura{to{transform:translateX(5%) scale(1.07);filter:hue-rotate(12deg)}}
+@keyframes mistFlow{to{transform:translateX(9%)}}
+@keyframes trailFly{0%{transform:translateX(0) rotate(-9deg);opacity:0}12%{opacity:1}80%{opacity:1}100%{transform:translateX(145vw) rotate(-9deg);opacity:0}}
+@keyframes crystalAwake{50%{transform:translateY(-8px) scale(1.045);filter:drop-shadow(0 0 25px #70f5ff)}}
+@keyframes orbPulse{0%{transform:scale(.65);opacity:.8}100%{transform:scale(1.3);opacity:0}}
+@keyframes buttonGlint{0%,38%{transform:translateX(-55%)}75%,100%{transform:translateX(55%)}}
+@keyframes arrowPush{50%{transform:translateX(7px)}}
+
+@media(max-width:760px){
+  .splashContent{padding-top:84px}.splashContent h1{font-size:clamp(3rem,17vw,5rem)}
+  #impact{padding:70px 7px 18px}.impactPanel{padding:16px 10px;border-radius:18px}.impactGem{width:55px;height:55px;font-size:2.3rem}
+  .photoComparison{grid-template-columns:1fr;gap:4px}.photoFrame{height:min(62vw,330px)}.changeArrow{padding:2px}.changeArrow span{transform:rotate(90deg);font-size:2rem}.changeArrow b{margin-top:-4px}
+  .knowledgeGrid{grid-template-columns:1fr}.impactFooter{flex-direction:column}.impactProgress{flex:none;width:100%}.impactFooter .cinematicButton{width:100%;justify-content:center}
+}
+@media(max-width:420px){.impactHeader h2{font-size:2rem}.impactHeader p{font-size:.85rem}.knowledgeGrid p{font-size:.83rem}.photoFrame span{font-size:.72rem}.cinematicButton{letter-spacing:.07em}}
+@media(prefers-reduced-motion:reduce){.magicTrails,.riverMist{display:none}.photoFrame img{transition:none}}

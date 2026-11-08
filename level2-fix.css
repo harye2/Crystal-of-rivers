@@ -1,0 +1,2 @@
+.objective{pointer-events:none}.gameTop{pointer-events:none}.gameTop button{pointer-events:auto}#canvasWrap{touch-action:none}.threatLegend{display:none}
+@media(max-width:800px){.objective{top:135px;max-width:620px}.objective>div:first-child{display:none}}

@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#031521">
+<title>Arcanis · Crystal of Rivers</title>
+<link rel="stylesheet" href="game.css">
+</head>
+<body>
+<div id="loading">
+<div>💎</div>
+<b>ARCANIS</b>
+<i>
+</i>
+</div>
+<header>
+<b>💎 ARCANIS</b>
+<div class="avatarHud" id="avatarHud">
+<img id="avatarHudImg" src="assets/avatar-nino.png">
+<span id="avatarHudName">GUARDIÁN</span>
+</div>
+<nav>
+<button id="editAvatarBtn" aria-label="Edit avatar">✏️</button>
+<button id="soundBtn" aria-label="Sound effects">🔊</button>
+<button id="langBtn" aria-label="Change language">ES</button>
+</nav>
+</header>
+<main>
+<section id="splash" class="screen active">
+<div class="splashScene">
+<div class="riverMist">
+</div>
+<div class="magicTrails" aria-hidden="true">
+<i>
+</i>
+<i>
+</i>
+<i>
+</i>
+</div>
+<div class="splashContent">
+<small data-t="splashKicker">
+</small>
+<div class="splashCrystal">
+<span>💎</span>
+<i>
+</i>
+</div>
+<h1 data-t="title">
+</h1>
+<p data-t="splashStory">
+</p>
+<button class="cinematicButton" id="splashBtn">
+<span data-t="splashButton">
+</span>
+<b>▶</b>
+</button>
+<div class="splashHint" data-t="splashHint">
+</div>
+</div>
+</div>
+</section>
+<section id="home" class="screen">
+<div class="hero">
+<div class="heroContent">
+<small data-t="mission">
+</small>
+<div class="crystal">💎</div>
+<h1 data-t="title">
+</h1>
+<p data-t="intro">
+</p>
+<div class="creator">
+<div class="avatarPreview">
+<img id="avatarPreview" src="assets/avatar-nino.png">
+</div>
+<div class="editor">
+<b data-t="createGuardian">
+</b>
+<label data-t="gender">
+</label>
+<div class="choice">
+<button class="gender active" data-gender="boy">👦 <span data-t="boy">
+</span>
+</button>
+<button class="gender" data-gender="girl">👧 <span data-t="girl">
+</span>
+</button>
+</div>
+<label data-t="outfit">
+</label>
+<div class="colors">
+<button class="color active" data-color="0" style="--c:#1489df">
+</button>
+<button class="color" data-color="75" style="--c:#7e54de">
+</button>
+<button class="color" data-color="145" style="--c:#23aa74">
+</button>
+<button class="color" data-color="-35" style="--c:#e85e68">
+</button>
+</div>
+</div>
+</div>
+<div class="difficultyPanel">
+<label data-t="difficulty"></label>
+<div class="difficultyChoice">
+<button class="difficulty" data-difficulty="easy"><span>🌱</span><b data-t="easy"></b><small data-t="easySub"></small></button>
+<button class="difficulty active" data-difficulty="normal"><span>💎</span><b data-t="normal"></b><small data-t="normalSub"></small></button>
+<button class="difficulty" data-difficulty="hard"><span>🔥</span><b data-t="hard"></b><small data-t="hardSub"></small></button>
+</div>
+</div>
+<div class="nameRow">
+<input id="nameInput" maxlength="18">
+<button class="gold" id="beginBtn" data-t="begin">
+</button>
+</div>
+<div class="nameError" id="nameError" data-t="nameRequired">
+</div>
+<button id="resumeBtn" class="resumeBtn" hidden data-t="resume"></button>
+<div class="hints">⌨️ WASD / ← →　·　📱 <span data-t="touch">
+</span>
+</div>
+</div>
+</div>
+</section>
+<section id="world" class="screen">
+<div class="hud">
+<div>
+<small data-t="guardian">
+</small>
+<b id="playerName">—</b>
+</div>
+<div>
+<small data-t="total">
+</small>
+<b id="totalScore">0</b>
+</div>
+<div>
+<small data-t="crystalPowerLabel">
+</small>
+<b id="crystalPower">0%</b>
+</div>
+<div>
+<small data-t="record">
+</small>
+<b id="bestScore">0</b>
+</div>
+</div>
+<div class="worldPanel">
+<div class="worldHead">
+<div>
+<small>CAUCASIA · BAJO CAUCA</small>
+<h2 data-t="worldTitle">
+</h2>
+<p data-t="worldSub">
+</p>
+</div>
+<div class="orb">
+<i id="orbFill">
+</i>
+<span>💎</span>
+</div>
+</div>
+<div class="path">
+<button class="portal" data-level="1">
+<img src="assets/caucasia-level-1-real-2d-v9.webp">
+<strong>1</strong>
+<em class="status">
+</em>
+<div>
+<small data-t="level">
+</small>
+<b data-t="l1title">
+</b>
+<span data-t="l1sub">
+</span>
+</div>
+</button>
+<i>
+</i>
+<button class="portal locked" data-level="2">
+<img src="assets/caucasia-level-2-dredge-2d-v9.webp">
+<strong>2</strong>
+<em class="status">🔒</em>
+<div>
+<small data-t="level">
+</small>
+<b data-t="l2title">
+</b>
+<span data-t="l2sub">
+</span>
+</div>
+</button>
+<i>
+</i>
+<button class="portal locked" data-level="3">
+<img src="assets/caucasia-level-3-bridge-2d-v9.webp">
+<strong>3</strong>
+<em class="status">🔒</em>
+<div>
+<small data-t="level">
+</small>
+<b data-t="l3title">
+</b>
+<span data-t="l3sub">
+</span>
+</div>
+</button>
+</div>
+<div class="badges" id="badgeRow">
+</div>
+</div>
+</section>
+<section id="brief" class="screen">
+<div id="briefBg">
+</div>
+<article>
+<div id="briefNumber">01</div>
+<small id="briefKicker">
+</small>
+<h2 id="briefTitle">
+</h2>
+<p id="briefStory">
+</p>
+<div id="briefRules">
+</div>
+<button class="gold" id="launchBtn" data-t="launch">
+</button>
+</article>
+</section>
+<section id="game" class="screen">
+<div class="gameTop">
+<button id="exitBtn">← <span data-t="map">
+</span>
+</button>
+<div>
+<small id="levelLabel">
+</small>
+<b id="levelTitle">
+</b>
+</div>
+<aside>
+<span>⭐ <b id="score">0</b>
+</span>
+<span>🔥 <b id="combo">x1</b>
+</span>
+<span>❤️ <b id="lives">3</b>
+</span>
+<span>⏱️ <b id="time">45</b>
+</span>
+</aside>
+</div>
+<div class="objective">
+<div id="guideFace">🧙‍♀️</div>
+<div>
+<b id="objectiveTitle">
+</b>
+<span id="objectiveText">
+</span>
+<div id="bonusMission"><b id="bonusTitle"></b><span id="bonusProgress"></span></div>
+</div>
+<div class="progress">
+<i id="objectiveBar">
+</i>
+<span id="objectiveCount">
+</span>
+</div>
+</div>
+<div id="canvasWrap">
+<canvas id="canvas">
+</canvas>
+<div id="scanPulse"></div>
+<div id="countdown">
+</div>
+<div id="gameMessage">
+</div>
+<div class="mobile">
+<button id="leftBtn">◀</button>
+<button id="powerBtn">💎</button>
+<button id="rightBtn">▶</button>
+</div>
+</div>
+</section>
+<section id="levelResult" class="screen">
+<div id="resultScene">
+<article class="result">
+<div class="burst">✨</div>
+<small data-t="missionComplete">
+</small>
+<h2 id="resultTitle">
+</h2>
+<div id="stars">★★★</div>
+<div class="scoreRing">
+<b id="levelScore">0</b>
+<small>PTS</small>
+</div>
+<p id="lesson">
+</p>
+<div class="resultGrid">
+<div>
+<small data-t="accuracy">
+</small>
+<b id="accuracy">0%</b>
+</div>
+<div>
+<small data-t="bestCombo">
+</small>
+<b id="bestCombo">x1</b>
+</div>
+<div>
+<small data-t="riverHealth">
+</small>
+<b id="riverHealth">+0%</b>
+</div>
+</div>
+<button class="gold" id="continueBtn" data-t="continue">
+</button>
+</article>
+</div>
+</section>
+<section id="impact" class="screen">
+<div class="impactBackdrop">
+</div>
+<article class="impactPanel">
+<div class="impactHeader">
+<div>
+<small id="impactChapter">
+</small>
+<h2 data-t="impactTitle">
+</h2>
+<p data-t="impactIntro">
+</p>
+</div>
+<div class="impactGem">💎</div>
+</div>
+<div class="compareSlider" id="compareSlider">
+<img id="impactBefore" class="compareBefore" alt="Polluted river environment">
+<div class="compareAfter" id="afterLayer"><img id="impactAfter" alt="Restored river environment"></div>
+<span class="compareTag beforeTag" data-t="realityLabel"></span>
+<span class="compareTag afterTag" data-t="possibilityLabel"></span>
+<i id="compareHandle">↔</i>
+<input id="compareRange" type="range" min="0" max="100" value="50" aria-label="Compare before and after">
+</div>
+<div class="compareCaptions"><p id="beforeCaption"></p><p id="afterCaption"></p></div>
+<div class="knowledgeGrid">
+<section class="didYouKnow">
+<span>?</span>
+<div>
+<small data-t="didYouKnow">
+</small>
+<p id="impactFact">
+</p>
+</div>
+</section>
+<section class="missionAction">
+<span>✓</span>
+<div>
+<small data-t="yourAction">
+</small>
+<p id="impactAction">
+</p>
+</div>
+</section>
+</div>
+<footer class="impactFooter">
+<div class="impactProgress">
+<i id="impactProgress">
+</i>
+</div>
+<button class="cinematicButton" id="impactContinue">
+<span id="impactContinueText">
+</span>
+<b>▶</b>
+</button>
+</footer>
+</article>
+</section>
+<section id="finalMission" class="screen">
+<div class="quizScene"><article class="quizCard">
+<div class="quizGem">💎</div>
+<small data-t="finalChallenge"></small>
+<h2 data-t="proveGuardian"></h2>
+<p data-t="quizIntro"></p>
+<div class="quizMeter"><i id="quizBar"></i><span id="quizCount">1 / 3</span></div>
+<div id="quizQuestion"></div>
+<div id="quizOptions"></div>
+<div id="quizFeedback"></div>
+</article></div>
+</section>
+<section id="final" class="screen">
+<div class="finalScene">
+<div id="celebration" aria-hidden="true">
+</div>
+<article class="result finalResult">
+<div class="victoryTitle" data-t="victory">
+</div>
+<img class="finalAvatar" id="finalAvatar" src="assets/avatar-nino.png">
+<small data-t="legend">
+</small>
+<h2 id="finalName">
+</h2>
+<div class="finalScore" id="finalScore">0</div>
+<div class="rank" id="finalRank">
+</div>
+<p id="finalText">
+</p>
+<div class="certificate" id="certificate">
+<div class="certSeal">💎</div>
+<small data-t="certOfficial">
+</small>
+<h3 data-t="certGuardian">
+</h3>
+<p data-t="certRecognize">
+</p>
+<strong id="certificateName">GUARDIAN</strong>
+<p data-t="certBody">
+</p>
+<div class="certLine">
+<span>ARCANIS</span>
+<span id="certificateDate">
+</span>
+</div>
+</div>
+<div class="badges" id="finalBadges">
+</div>
+<footer>
+<button class="gold" id="downloadCertificate" data-t="downloadCert"></button>
+<button class="gold" id="replayBtn" data-t="replay">
+</button>
+<button id="backWorld" data-t="world">
+</button>
+</footer>
+</article>
+</div>
+</section>
+</main>
+<div id="toast">
+</div>
+<div id="flash">
+</div>
+<div class="dialogue" id="dialogue" role="dialog" aria-live="polite">
+<img id="dialogueAvatar" src="assets/avatar-nino.png">
+<div class="dialogueBody">
+<div>
+<b id="dialogueName">GUARDIÁN</b>
+</div>
+<p id="dialogueText">
+</p>
+<button id="dialogNext">CONTINUAR ▸</button>
+</div>
+</div>
+<style>@import url('avatar.css');@import url('dialogue.css');@import url('certificate.css');@import url('magic.css');@import url('premium.css');@import url('level2-fix.css');@import url('experience-v3.css');@import url('v4.css');@import url('runner-v5.css');@import url('gameplay-v6.css');@import url('clarity-v7.css');#briefBg{position:fixed;inset:0;background:center/cover no-repeat;filter:brightness(.45);animation:zoom 12s infinite alternate}#stars{font-size:2.3rem;color:var(--gold);letter-spacing:.14em}</style>
+<script src="game.js">
+</script>
+<script src="threat-renderer.js">
+</script>
+<script src="dialogue.js">
+</script>
+<script src="magic.js">
+</script>
+<script src="v4.js"></script>
+<script src="runner-v5.js"></script>
+<script src="gameplay-v6.js"></script>
+<script src="clarity-v7.js"></script>
+<script src="world-art-v8.js"></script>
+<script src="real-caucasia-v9.js"></script>
+<link rel="stylesheet" href="mission-v10.css">
+<script src="mission-v10.js"></script>
+</body>
+</html>

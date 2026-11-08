@@ -1,0 +1,9 @@
+/* Level 3 runner controls and feedback */
+body.runner-mode #canvasWrap{border-color:#72efff;box-shadow:0 0 0 1px #5be9ff55,0 22px 65px #000b,0 0 42px #27cde92c inset}
+body.runner-mode #powerBtn{font-size:1.45rem;border-color:#ffe073;background:linear-gradient(180deg,#8a6513,#4a3107);box-shadow:0 0 22px #ffd65f66}
+body.runner-mode #powerBtn:after{content:"JUMP";display:block;font-size:.48rem;letter-spacing:.1em}
+html[lang="es"] body.runner-mode #powerBtn:after{content:"SALTA"}
+.runnerHint{position:absolute;z-index:6;left:50%;bottom:12px;transform:translateX(-50%);padding:7px 12px;border:1px solid #8af7ff55;border-radius:20px;background:#001924b8;color:#bdf9ff;font-size:.67rem;font-weight:850;letter-spacing:.06em;pointer-events:none;animation:runnerHintFade 7s forwards}
+.runnerSpeed{position:absolute;z-index:6;right:12px;top:12px;padding:6px 9px;border-radius:8px;background:#00151fba;color:#7ef2ff;font-size:.68rem;font-weight:900;pointer-events:none}
+@keyframes runnerHintFade{0%,70%{opacity:1}100%{opacity:0}}
+@media(max-width:700px){body.runner-mode .mobile{display:flex}.runnerHint{bottom:76px;width:max-content;max-width:86%;text-align:center}.runnerSpeed{top:8px;right:8px}}

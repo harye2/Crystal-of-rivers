@@ -1,0 +1,8 @@
+/* V6: visible river-defense gameplay for level 2 */
+body.defense-mode #canvasWrap{border-color:#ffc95b;box-shadow:0 0 0 1px #ffc95b55,0 22px 65px #000c,0 0 50px #e9a52820 inset}
+body.defense-mode #powerBtn{border-color:#ffd86c;background:linear-gradient(180deg,#946510,#493007);color:#fff4bd;font-size:.8rem;font-weight:1000;box-shadow:0 0 22px #ffca4d55}
+body.defense-mode #powerBtn.ready{animation:defensePower 1s infinite alternate}
+.defenseLabel{position:absolute;z-index:7;left:12px;bottom:12px;padding:7px 11px;border:1px solid #ffd76b66;border-radius:10px;background:#211704c9;color:#ffe99e;font-size:.68rem;font-weight:900;pointer-events:none}
+.coreLabel{position:absolute;z-index:7;left:50%;top:48%;transform:translate(-50%,-50%);padding:5px 9px;border-radius:16px;background:#002531bb;color:#8df8ff;font-size:.61rem;font-weight:950;letter-spacing:.09em;pointer-events:none}
+@keyframes defensePower{to{box-shadow:0 0 36px #ffe36f,0 0 0 3px #fff3 inset;transform:translateY(-3px)}}
+@media(max-width:700px){body.defense-mode .mobile{display:flex}.defenseLabel{bottom:78px}.coreLabel{top:55%}}
